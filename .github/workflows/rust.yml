@@ -19,6 +19,6 @@ jobs:
     - name: check target
       run: rustup target add x86_64-pc-windows-gnu
     - name: install toolchain
-      run: rustup toolchain install stable-x86_64-unknown-linux-gnu
+      run: rustup toolchain install stable-x86_64-pc-windows-gnu
     - name: Build
       run: cargo build --target x86_64-pc-windows-gnu --release
