@@ -1,0 +1,25 @@
+[package]
+name = "versionrs"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "version"
+crate-type = ["cdylib"]
+[build]
+rustflags = ["-C", "link-arg=\"src/version.def\""]
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# rustc a.rs -C link-args="a.def"
+[profile.release]
+opt-level = 3               # Use slightly better optimizations.
+overflow-checks = false     # Disable integer overflow checks.
+lto = "fat"
+panic = "abort"
+codegen-units = 1
+debug-assertions = false
+
+[dependencies]
+winapi = {version = "^0.3", features = ["minwindef","windef","libloaderapi","sysinfoapi","wow64apiset","errhandlingapi","winerror","winnt"]}
+widestring = "0.5"
+lazy_static = "1.4"
+wchar = "0.10"
