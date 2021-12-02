@@ -16,6 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: install mingw
+      uses: egor-tensin/setup-mingw@v2
+      with:
+        platform: x64
     - name: check target
       run: rustup target add x86_64-pc-windows-gnu
     - name: Build
