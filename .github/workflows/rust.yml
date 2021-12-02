@@ -20,5 +20,7 @@ jobs:
       run: rustup target add x86_64-pc-windows-gnu
     - name: install toolchain
       run: rustup toolchain install stable-x86_64-pc-windows-gnu
+    - name: check rust
+      run: rustup show
     - name: Build
       run: cargo build --target x86_64-pc-windows-gnu --release
