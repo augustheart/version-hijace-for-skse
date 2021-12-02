@@ -27,4 +27,4 @@ jobs:
     - name: check rust
       run: rustup show
     - name: Build
-      run: cargo build --target x86_64-pc-windows-gnu --release
+      run: cargo +stable-86_64-pc-windows-gnu build --target x86_64-pc-windows-gnu --release
